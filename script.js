@@ -92,6 +92,7 @@ function updateAnswer () {
 	var buildingSelect = document.getElementById("buildingSelect");
 
 	var answerText = document.getElementById("output");
+	answerText.style.fontSize = "100px"; //reset text size
 	var result = getOutput(objectVolumes[objectSelect.value], 
 									   buildingVolumes[buildingSelect.value]);
 	answerText.textContent = 0; // will be updated one by one as the pictogram appears
