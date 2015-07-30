@@ -1,0 +1,82 @@
+body {
+	background-color: #ECFBFF
+}
+
+h1 {
+	text-align: center;
+	color: FFFFFF;
+	background-color: FF9191;
+	padding: 10px;
+	margin-top: 20px;
+}
+
+h2 {
+	margin: 30px 0px;
+}
+
+h3 {
+	text-align: center;
+}
+
+#animalCountryEntry {
+	text-align: center;
+}
+
+select {
+	font-family: 'Quicksand', sans-serif;
+}
+
+button {
+	font-family: 'Quicksand', sans-serif;
+}
+
+#output {
+	font-size: 100;
+	text-align: center;	
+}
+
+#outputWords {
+	font-size: 20;
+	font-style: italic;
+	text-align: center;	
+}
+
+#pictogram {
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#mainSection {
+	font-family: 'Quicksand', sans-serif;
+	padding-top: 5px;
+
+	width: 600px;
+	margin-left: auto;
+	margin-right: auto;
+	height: auto;
+	margin-top: auto;
+	margin-bottom: auto;
+}
+
+footer {
+	font-family: 'Quicksand', sans-serif;
+	color: FFFFFF;
+	position: fixed;
+	bottom: 0px;
+	left: 0px;
+	background-color: FF9191;
+	padding: 10px;
+}
+
+#pictogram img {
+	width: 15px;
+	margin: 3px;
+}
+
+#calcButton {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 100px;
+}
