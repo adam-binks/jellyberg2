@@ -1,4 +1,7 @@
 import wikipedia
+import pyperclip
+
+print('downloading...')
 
 def getCountryArea(country):
 	page = wikipedia.page(country)
@@ -31,7 +34,7 @@ def trimText(fullText, searchTerm):
 	
 
 def generateJson(countries):
-	json = ',';
+	json = ', ';
 	for country in countries:
 		json += '"'+country+'": ' + str(getCountryArea(country))
 		if country != countries[-1]:
@@ -41,5 +44,7 @@ def generateJson(countries):
 	return json
 
 
-json = generateJson(['russia', 'wales', 'new zealand'])
+json = generateJson(['russia', 'wales', 'new zealand', 'bosnia'])
+
+pyperclip.copy(json)
 print(json)

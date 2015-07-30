@@ -8,7 +8,9 @@ var buildingVolumes = {"Empire State Building": 8094,
 					 "Baltic Centre": 8880,
 					 "Tower of Pisa": 1963,
 					 "Eiffel Tower": 40500,
-					 "Wales": 207610*1000000000};
+					 "Wales": 207610*1000000000, 
+					 "Russia": 17098242*1000000000,
+					 "New Zealand": 268021*1000000000};
 
 var largeNumberDigits = {
 	6:"million",
