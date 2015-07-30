@@ -1,7 +1,7 @@
 var objectVolumes = {"blue whales": 223.5, 
-				   "footballs": 1,
-				   "books": 1.5,
-				   "Cadbury's chocolate bars": 0.5,
+				   "footballs": 0.00729,
+				   "books": 0.0015,
+				   "Cadbury's chocolate bars": 0.001932,
 				   "DS cartridges":0.00006};
 
 var buildingVolumes = {"Empire State Building": 8094,
@@ -34,7 +34,7 @@ var largeNumberDigits = {
 	303:"centillion"
 };
 
-var maxImagesToDisplay = 2000;
+var maxImagesToDisplay = 3000;
 var imageDisplayInterval = 0.2;
 
 var targetResult;
@@ -113,7 +113,12 @@ function GenPictogram(result, objectName, buildingName) {
 
 /// add a new image (called every x seconds to make them pop in in sequence)
 function AddPictogramImage() {
-	var numToAddThisFrame = Math.ceil((currentResult + 1) / 10);
+	var numToAddThisFrame;
+	if (currentResult < maxImagesToDisplay) {
+		numToAddThisFrame = 10 + Math.ceil((currentResult + 1) * 0.01);
+	} else {
+		numToAddThisFrame = Math.ceil((currentResult + 1) / 10);
+	}
 	currentResult += numToAddThisFrame;
 	if (currentResult >= targetResult) {
 		currentResult = targetResult;
