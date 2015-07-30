@@ -65,7 +65,7 @@ function updateSelectProperties() {
 	populateSelect(buildingSelect, buildingKeys);
 }
 
-/// adds the optionNames to the selectElement as seperate options in the dropdown
+/// adds the optionNames to the selectElement as separate options in the dropdown
 function populateSelect(selectElement, optionNames) {
 	for (var i = 0; i < optionNames.length; i++) {
 		var option = document.createElement("option");
@@ -76,7 +76,6 @@ function populateSelect(selectElement, optionNames) {
 
 /// clear all output
 function clearAnswer() {
-	console.log('clear');
 	var answerText = document.getElementById("output");
 	answerText.style.display = "none";
 	var pictogramDiv = document.getElementById("pictogram");
@@ -131,10 +130,37 @@ function AddPictogramImage() {
 			pictogramDiv.appendChild(image);	
 		}
 	}
+	updateOutputText();
+}
 
-	// update the answer text to the current result
+/// update the answer text to the current result
+function updateOutputText() {
 	var answerText = document.getElementById("output");
 	answerText.textContent = currentResult;
+	if (checkOverflow(answerText)) {
+		resizeText(0.9, answerText, 100);
+	}
+	else { console.log('it fits');	}
+}
+
+function checkOverflow(el)
+{
+   var curOverflow = el.style.overflow;
+   if ( !curOverflow || curOverflow === "visible" )
+      el.style.overflow = "hidden";
+
+   var isOverflowing = el.clientWidth < el.scrollWidth || el.clientHeight < el.scrollHeight;
+
+   el.style.overflow = curOverflow;
+
+   return isOverflowing;
+}
+
+function resizeText(multiplier, element, defaultSize) {
+  if (element.style.fontSize === "") {
+    element.style.fontSize = defaultSize.toString() + "px";
+  }
+  element.style.fontSize = parseFloat(element.style.fontSize) * multiplier + "px";
 }
 
 /// work out how many objects with objectVolume can fit in the given buildingVolume
@@ -183,7 +209,6 @@ function intToWords(num) {
 function getNumDigits(num) {
 	return Math.floor(Math.log(num) / Math.log(10));
 }
-
 
 
 document.addEventListener("DOMContentLoaded", start);
