@@ -69,6 +69,19 @@ footer {
 	padding: 10px;
 }
 
+#references {
+	background-color: FF9191;
+	position: fixed;
+	bottom: 0px;
+	right: 0px;
+	width: 300px;
+}
+
+#references img {
+	width: 80px;
+	padding: 20px;
+}
+
 #pictogram img {
 	width: 15px;
 	margin: 3px;

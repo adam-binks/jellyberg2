@@ -2,7 +2,8 @@ var objectVolumes = {"blue whales": 223.5,
 				   "footballs": 0.00729,
 				   "books": 0.0015,
 				   "Cadbury's chocolate bars": 0.001932,
-				   "DS cartridges":0.00006};
+				   "DS cartridges":0.00006,
+				   "coffees": 0.000576};
 
 var buildingVolumes = {"Empire State Building": 8094,
 					 "Baltic Centre": 8880,
@@ -10,7 +11,8 @@ var buildingVolumes = {"Empire State Building": 8094,
 					 "Eiffel Tower": 40500,
 					 "Wales": 207610*1000000000, 
 					 "Russia": 17098242*1000000000,
-					 "New Zealand": 268021*1000000000};
+					 "New Zealand": 268021*1000000000,
+					 "a YRS mentor": 0.261};
 
 var largeNumberDigits = {
 	6:"million",
