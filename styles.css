@@ -61,23 +61,17 @@ footer {
 	font-family: 'Quicksand', sans-serif;
 	color: FFFFFF;
 	position: fixed;
-	bottom: 0px;
+	bottom: -130px;
 	left: 0px;
 	background-color: FF9191;
 	padding: 10px;
 }
 
-#references {
-	background-color: FF9191;
-	position: fixed;
-	bottom: 0px;
-	right: 0px;
-	/*width: 300px;*/
-}
-
-#references img {
+footer img {
 	height: 80px;
 	padding: 20px;
+	padding-right: 90px;
+	padding-left: 90px;
 }
 
 #pictogram img {
@@ -92,4 +86,12 @@ footer {
 	width: 250px;
 	font-family: 'Quicksand', sans-serif;
 	font-size: 30px;
+}
+
+#arrow {
+	width: 20px;
+	height: 20px;
+	display: inline;
+	margin: 0px;
+	padding: 0px;
 }

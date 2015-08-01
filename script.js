@@ -45,6 +45,12 @@ var currentResult = 0;
 var selectedObjectName;
 var currentIntervalID;
 
+var footerAnimInterval;
+var footerDiv = document.getElementById("footer");
+var footerHideY = -130;
+var footerShowY = 0;
+var currentFooterBottom = footerHideY;
+
 // cache these to improve performance
 var pictogramDiv = document.getElementById("pictogram");
 var wordOutputText = document.getElementById("outputWords");
@@ -227,6 +233,35 @@ function intToWords(num) {
 
 function getNumDigits(num) {
 	return Math.floor(Math.log(num) / Math.log(10));
+}
+
+
+function revealReferences() {
+	window.clearInterval(footerAnimInterval);
+	footerAnimInterval = window.setInterval(animRevealReferences, 0.1);
+}
+
+function animRevealReferences() {
+	if (currentFooterBottom == footerShowY) {
+		window.clearInterval(footerAnimInterval);
+		return;
+	}
+	currentFooterBottom += Math.ceil(footerShowY - currentFooterBottom) * 0.1;
+	footer.style.bottom = currentFooterBottom.toString() + "px";
+}
+
+function hideReferences() {
+	window.clearInterval(footerAnimInterval);
+	footerAnimInterval = window.setInterval(animHideReferences, 0.1);
+}
+
+function animHideReferences() {
+	if (currentFooterBottom == footerShowY) {
+		window.clearInterval(footerAnimInterval);
+		return;
+	}
+	currentFooterBottom += Math.floor((footerHideY - currentFooterBottom) * 0.1);
+	footer.style.bottom = currentFooterBottom.toString() + "px";
 }
 
 
