@@ -1,14 +1,13 @@
 var objectVolumes = {"blue whales": 223.5, 
 				   "footballs": 0.00729,
 				   "books": 0.0015,
-				   "Cadbury's chocolate bars": 0.001932,
+				   "chocolate bars": 0.001932,
 				   "DS cartridges":0.00006,
 				   "coffees": 0.000576};
 
-var buildingVolumes = {"Empire State Building": 8094,
-					 "Baltic Centre": 8880,
-					 "Tower of Pisa": 1963,
-					 "Eiffel Tower": 40500,
+var buildingVolumes = {"the Empire State Building": 1.04772e6,
+					 "the Tower of Pisa": 1963,
+					 "the Eiffel Tower": 40500,
 					 "Wales": 207610*1000000000, 
 					 "Russia": 17098242*1000000000,
 					 "New Zealand": 268021*1000000000,
@@ -45,6 +44,10 @@ var targetResult;
 var currentResult = 0;
 var selectedObjectName;
 var currentIntervalID;
+
+// cache these to improve performance
+var pictogramDiv = document.getElementById("pictogram");
+var wordOutputText = document.getElementById("outputWords");
 
 
 function start() {
@@ -97,6 +100,10 @@ function updateAnswer () {
 	answerText.style.fontSize = "100px"; //reset text size
 	var result = getOutput(objectVolumes[objectSelect.value], 
 									   buildingVolumes[buildingSelect.value]);
+	if (result < 1.0) {
+		answerText.textContent = result;
+		answerText.style.display = "block";
+	}
 	answerText.textContent = 0; // will be updated one by one as the pictogram appears
 	answerText.style.display = "block";
 
@@ -105,9 +112,7 @@ function updateAnswer () {
 
 /// generate a pictogram of the object tiled in a grid, with a delay
 function GenPictogram(result, objectName, buildingName) {
-	var pictogramDiv = document.getElementById("pictogram");
 	pictogramDiv.innerHTML = '';
-	var wordOutputText = document.getElementById("outputWords");
 	wordOutputText.style.display = "none";
 	targetResult = result;
 	currentResult = 0;
@@ -179,6 +184,10 @@ function getOutput (objectVolume, buildingVolume) {
 	var result = buildingVolume / objectVolume;
 	if (Number.isNaN(result)) {
 		console.log("Error: not a number");
+	}
+	// don't round down fractions!
+	if (result < 1) {
+		return result;
 	}
 	return Math.floor(result);
 }

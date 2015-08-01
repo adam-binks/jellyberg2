@@ -1,5 +1,5 @@
 import wikipedia
-import pyperclip
+#import pyperclip
 
 print('downloading...')
 
@@ -44,7 +44,7 @@ def generateJson(countries):
 	return json
 
 
-json = generateJson(['russia', 'wales', 'new zealand', 'bosnia'])
+json = generateJson(['russia', 'canada', 'india', 'bosnia'])
 
-pyperclip.copy(json)
+#pyperclip.copy(json)
 print(json)

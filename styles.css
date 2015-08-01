@@ -18,16 +18,14 @@ h3 {
 	text-align: center;
 }
 
-#animalCountryEntry {
+#objectBuildingEntry {
 	text-align: center;
+	font-size: 30px;
 }
 
 select {
 	font-family: 'Quicksand', sans-serif;
-}
-
-button {
-	font-family: 'Quicksand', sans-serif;
+	font-size: 30px;
 }
 
 #output {
@@ -74,11 +72,11 @@ footer {
 	position: fixed;
 	bottom: 0px;
 	right: 0px;
-	width: 300px;
+	/*width: 300px;*/
 }
 
 #references img {
-	width: 80px;
+	height: 80px;
 	padding: 20px;
 }
 
@@ -91,5 +89,7 @@ footer {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
-	width: 100px;
+	width: 250px;
+	font-family: 'Quicksand', sans-serif;
+	font-size: 30px;
 }
