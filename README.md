@@ -1,4 +1,4 @@
-# [How many whales in Wales?](j.mp/howmanywhales)
+# [How many whales in Wales?](http://j.mp/howmanywhales)
 A website created for [Festival of Code 2015](http://www.yrs.io/festival)
 
 Open data sourced from [Wikipedia](http://wikimedia.org/wiki/donate) using the [Wikipedia Python library](http://pypi.python.org/pypi/wikipedia/)
